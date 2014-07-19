@@ -1,0 +1,11 @@
+---
+---
+omg → {% filter %}omg{% endfilter %}
+OMG → {% filter upcase %}omg{% endfilter %}
+BOOGIE → {% filter upcase if true %} boogie {% endfilter %}
+boogie → {% filter upcase unless true %} boogie {% endfilter %}
+
+{% assign appraisal = 'priceless artifacts' %}
+{% filter replace:'junk',appraisal %}
+So, I have some junk for you.
+{% endfilter %}
