@@ -8,55 +8,62 @@ A Liquid block tag which can conditionally filter its content.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+If you're using bundler add this gem to your site's Gemfile in the `:jekyll_plugins` group:
 
-    gem 'octopress-filter-tag'
+    group :jekyll_plugins do
+      gem 'octopress-filter-tag'
+    end
 
-And then execute:
+Then install the gem with Bundler
 
     $ bundle
 
-Or install it yourself as:
+To install manually without bundler:
 
     $ gem install octopress-filter-tag
 
-Next add it to your gems list in Jekyll's `_config.yml`
+Then add the gem to your Jekyll configuration.
 
     gems:
-      - octopress-filter-tag
+      -octopress-filter-tag
 
 ## Usage
 
 Syntax:
 
-    {% filter [filters] %}
-    some sort of content
-    {% endfilter %}
+```
+{% filter [filters] %}
+some sort of content
+{% endfilter %}
+```
 
 Simple filter usage.
 
-    {% filter upcase  %}
-    kittens.
-    {% endfilter %}     
-    
-    //=> KITTENS.
+```
+{% filter upcase  %}
+kittens.
+{% endfilter %}     
 
-    {% filter upcase | replace: "?","!" %}
-    kittens??
-    {% endfilter %}     
-    
-    //=> KITTENS!!
+//=> KITTENS.
+
+{% filter upcase | replace: "?","!" %}
+kittens??
+{% endfilter %}     
+
+//=> KITTENS!!
+```
 
 Conditional filtering
 
-    {% assign shouting = true %}
+```
+{% assign shouting = true %}
 
-    {% filter | upcase if shouting %}
-    What's going on?
-    {% endfilter %}
+{% filter | upcase if shouting %}
+What's going on?
+{% endfilter %}
 
-    //=> WHAT'S GOING ON?
-
+//=> WHAT'S GOING ON?
+```
 
 ## Contributing
 

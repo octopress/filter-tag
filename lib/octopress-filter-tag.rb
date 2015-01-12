@@ -4,7 +4,7 @@ require "jekyll"
 
 module Octopress
   module Tags
-    module FilterTag
+    module Filter
       class Tag < Liquid::Block
         def initialize(tag_name, markup, tokens)
           super
@@ -29,4 +29,15 @@ module Octopress
   end
 end
 
-Liquid::Template.register_tag('filter', Octopress::Tags::FilterTag::Tag)
+Liquid::Template.register_tag('filter', Octopress::Tags::Filter::Tag)
+
+if defined? Octopress::Docs
+  Octopress::Docs.add({
+    name:        "Octopress Filter Tag",
+    gem:         "octopress-filter-tag",
+    version:     Octopress::Tags::Filter::VERSION,
+    description: "",
+    path:        File.expand_path(File.join(File.dirname(__FILE__), "../")),
+    source_url:  "https://github.com/octopress/filter-tag"
+  })
+end

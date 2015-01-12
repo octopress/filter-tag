@@ -1,7 +1,7 @@
 module Octopress
   module Tags
-    module FilterTag
-      VERSION = "1.0.0"
+    module Filter
+      VERSION = "1.0.1"
     end
   end
 end

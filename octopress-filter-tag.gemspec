@@ -5,7 +5,7 @@ require 'octopress-filter-tag/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "octopress-filter-tag"
-  spec.version       = Octopress::Tags::FilterTag::VERSION
+  spec.version       = Octopress::Tags::Filter::VERSION
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{A Liquid block tag which can conditionally filter its content}
