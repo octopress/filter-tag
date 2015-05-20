@@ -9,16 +9,17 @@ module Octopress
         def initialize(tag_name, markup, tokens)
           super
           unless markup.strip =~ /^\|/
-            markup = "| #{markup}"
+            markup = " | #{markup}"
           end
           @markup = " #{markup}"
         end
 
         def render(context)
           content = super.strip
-
+          
           return content unless markup = TagHelpers::Conditional.parse(@markup, context)
-          if markup =~ TagHelpers::Var::HAS_FILTERS and !content.nil?
+
+          if !content.nil? and markup =~ TagHelpers::Var::HAS_FILTERS
             content = TagHelpers::Var.render_filters(content, $2, context)
           end
 
@@ -36,7 +37,7 @@ if defined? Octopress::Docs
     name:        "Octopress Filter Tag",
     gem:         "octopress-filter-tag",
     version:     Octopress::Tags::Filter::VERSION,
-    description: "",
+    description: "A liquid block tag that filters its contents.",
     path:        File.expand_path(File.join(File.dirname(__FILE__), "../")),
     source_url:  "https://github.com/octopress/filter-tag"
   })

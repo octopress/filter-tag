@@ -9,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Brandon Mathis"]
   spec.email         = ["brandon@imathis.com"]
   spec.summary       = %q{A Liquid block tag which can conditionally filter its content}
-  spec.description   = %q{A Liquid block tag which can conditionally filter its content}
   spec.homepage      = "https://github.com/octopress/filter-tag"
   spec.license       = "MIT"
 
@@ -19,9 +18,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "octopress-tag-helpers", "~> 1.0"
-  spec.add_runtime_dependency "jekyll"
+  spec.add_runtime_dependency "jekyll", ">= 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "clash"
 end
